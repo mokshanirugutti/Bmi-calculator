@@ -30,7 +30,7 @@ def calculate_bmi():
     elif bmi<18:
     	messagebox.showwarning("Results", "UnderWeight")
     else:
-    	messagebox.showinfo("Results", "Fit")
+    	messagebox.showinfo("Results", "you are Fit")
     	
 
 
