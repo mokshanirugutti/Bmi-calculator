@@ -8,7 +8,7 @@ head_font =("Arial",20,'bold')
 
 # Initialise Root i.e Window
 root = Tk()
-title = Label(root, text="BMI calclulator ", font=head_font)
+title = Label(root, text="BMI calculator ", font=head_font)
 title.grid(row=0, column=0,pady=25,ipadx=25)
 # Labels Are Here
 weight_label = Label(root, text="Weight in kilograms : ", font=universal_font, )
@@ -22,9 +22,9 @@ def calculate_bmi():
     # Lets get the values from each entry
     wght = weight.get()
     hght = height.get()
-    # Notes: BMI - Formula = (weight / height ^ 2)
-    height_ms = hght*12/39.37
-    bmi = wght /pow(height_ms, 2)  # We'r converting it to metre..
+    
+    height_ms = hght*12/39.37 # converting height into meter 
+    bmi = wght /pow(height_ms, 2)  
     if bmi >25:
     	messagebox.showwarning("Results", "OverWeight")
     elif bmi<18:
@@ -58,7 +58,5 @@ btn_calculate = Button(root, width=5, text="Calculate",
                        font=universal_font, bd=3, command=calculate_bmi)
 btn_calculate.grid(row=3, columnspan=3, pady=50)
 
-# Root Window Configurations...
-root.title("BMI Calculator")
 root.resizable(False, False)
 root.mainloop()
